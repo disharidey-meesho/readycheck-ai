@@ -1,0 +1,5 @@
+{
+  "name": "SOP Readiness Simulator",
+  "description": "An AI-powered testing platform that evaluates customer support agents' readiness by generating dynamic scenarios and MCQs based on Standard Operating Procedures.",
+  "requestFramePermissions": []
+}
