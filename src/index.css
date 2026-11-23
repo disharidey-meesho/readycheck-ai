@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-meesho-purple: #B326B8;
+  --color-meesho-dark: #8E1A94;
+  --color-meesho-light: #F2EEFC;
+  --color-meesho-accent: #FF9A1F;
+  --color-ink: #2C2A33;
+  --color-ink-soft: #5B5970;
+  --color-canvas: #F7F5FF;
+
+  --radius-3xl: 1.75rem;
+  --radius-4xl: 2rem;
+}
+
+@utility meesho-gradient {
+  background-color: #B326B8;
+}
+
+@layer base {
+  html, body { overflow-x: hidden; }
+  html, body, #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply antialiased;
+    color: #2C2A33;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    background-color: #F4F1FB;
+    background-image: radial-gradient(circle, rgba(168, 120, 210, 0.45) 1.15px, transparent 1.25px);
+    background-size: 22px 22px;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .hero-band {
+    background-color: #7A1C86;
+    background-image:
+      radial-gradient(circle, rgba(255, 255, 255, 0.28) 1.15px, transparent 1.3px),
+      linear-gradient(180deg, #8C2A98 0%, #6A1574 100%);
+    background-size: 18px 18px, auto;
+    border-radius: 32px;
+    color: #fff;
+  }
+
+  .display-heading {
+    font-size: clamp(3.25rem, 6.4vw, 5.25rem);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    color: #2C2A33;
+  }
+
+  .word-magenta { color: #A21CAF; }
+  .word-lilac { color: #7C3AED; }
+  .word-orange { color: #FF9A1F; }
+
+  .pill-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    background: #fff;
+    color: #7A1C86;
+    font-weight: 600;
+    padding: 0.85rem 1.6rem;
+    box-shadow: 0 10px 24px rgba(60, 10, 70, 0.16);
+  }
+
+  .pill-light:hover { background: #F7F2FF; }
+
+  .glass-card,
+  .float-card {
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow:
+      0 24px 60px rgba(166, 77, 224, 0.10),
+      0 2px 10px rgba(179, 38, 184, 0.04);
+  }
+
+  .category-card {
+    background: #F2EEFC;
+    border-radius: 28px;
+    box-shadow: 0 14px 36px rgba(166, 77, 224, 0.07);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(105deg, #B326B8 0%, #A64DE0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .category-heading {
+    font-size: clamp(3rem, 4.2vw, 3.375rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    color: #353440;
+  }
+
+  .kpi-value {
+    font-size: clamp(4.75rem, 8vw, 6.25rem);
+    line-height: 0.92;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    color: #B326B8;
+  }
+
+  .kpi-caption {
+    font-size: clamp(1.375rem, 1.6vw, 1.5rem);
+    line-height: 1.35;
+    font-weight: 400;
+    color: #353440;
+  }
+
+  .eyebrow {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #5B5970;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold text-white transition-all;
+    background: #B326B8;
+    box-shadow: 0 12px 28px rgba(179, 38, 184, 0.22);
+  }
+
+  .btn-primary:hover {
+    background: #8E1A94;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.99);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl bg-white px-5 py-3.5 text-[15px] font-medium outline-none transition-all;
+    color: #353440;
+    box-shadow: 0 8px 24px rgba(166, 77, 224, 0.08);
+  }
+
+  .input-field::placeholder {
+    color: #6E6C82;
+  }
+
+  .input-field:focus {
+    box-shadow:
+      0 0 0 3px rgba(179, 38, 184, 0.16),
+      0 8px 24px rgba(166, 77, 224, 0.10);
+  }
+}
